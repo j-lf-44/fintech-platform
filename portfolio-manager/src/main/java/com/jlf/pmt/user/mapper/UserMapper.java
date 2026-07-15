@@ -13,14 +13,15 @@ public class UserMapper {
 		
 		User user = new User();
 		
+		user.setName(request.getName());
+		user.setEmail(request.getEmail());
 		
 		return user;
 	}
 	
 	public UserResponse toResponse(User user) {
-		UserResponse response = new UserResponse();
 		
-		return response;
+		return new UserResponse(user.getName(), user.getEmail());
 	}
 
 }
